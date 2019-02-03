@@ -10,7 +10,7 @@ def readme():
 
 setup(
     name="bitchbetterhavemymoney",
-    version="0.0.0.2",
+    version="0.0.0.3",
     description="A Python CLI tool to check your Monizze maaltijdcheques.",
     long_description=readme(),
     long_description_content_type="text/plain",

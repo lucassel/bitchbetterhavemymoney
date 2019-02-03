@@ -3,7 +3,26 @@ from selenium.webdriver.common.keys import Keys
 import getpass, sys, os
 
 def main():
+  
+  user = ""
+  
+  if os.path.isfile('./userinfo.txt'):
+    f = open("userinfo.txt", "r")
+    user = str(f.readline())
+    
+  else:
+    print("Running bitchbetterhavemymoney for the first time!")
+    var = input("Please enter your username: ")
+    text_file = open("userinfo.txt", "w")
+    text_file.write(str(var))
+    user = str(var)
+    text_file.close()
+
+  message = "gonna go get your money, {}".format(user)
+  print(message)
+
   p = getpass.getpass(prompt="Password:")
+
   CURSOR_UP_ONE = '\x1b[1A'
   ERASE_LINE = '\x1b[2K'
   sys.stdout.write(CURSOR_UP_ONE)
@@ -18,7 +37,7 @@ def main():
 
   email = driver.find_element_by_name("email")
   email.clear()
-  email.send_keys("0471074098")
+  email.send_keys(user)
 
   password = driver.find_element_by_name("password")
   password.clear()
