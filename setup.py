@@ -10,7 +10,7 @@ def readme():
 
 setup(
     name="bitchbetterhavemymoney",
-    version="0.0.0.3",
+    version="0.0.0.5",
     description="A Python CLI tool to check your Monizze maaltijdcheques.",
     long_description=readme(),
     long_description_content_type="text/plain",
@@ -24,6 +24,9 @@ setup(
     ],
     packages=["bitchbetterhavemymoney"],
     include_package_data=True,
+    install_requires=[
+          'selenium',
+      ],
     entry_points={
         "console_scripts": [
             "bitchbetterhavemymoney=bitchbetterhavemymoney.cli:main",

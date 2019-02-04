@@ -11,23 +11,23 @@ def main():
     user = str(f.readline())
     
   else:
-    print("Running bitchbetterhavemymoney for the first time!")
-    var = input("Please enter your username: ")
+    print("Running bitchbetterhavemymoney for the first time! ☝️")
+    var = input("Please enter your username: 👉")
     text_file = open("userinfo.txt", "w")
     text_file.write(str(var))
     user = str(var)
     text_file.close()
 
-  message = "gonna go get your money, {}".format(user)
+  message = "Gonna go get your money, {} 👌".format(user)
   print(message)
 
-  p = getpass.getpass(prompt="Password:")
+  p = getpass.getpass(prompt="Enter your assword: 👉")
 
   CURSOR_UP_ONE = '\x1b[1A'
   ERASE_LINE = '\x1b[2K'
   sys.stdout.write(CURSOR_UP_ONE)
   sys.stdout.write(ERASE_LINE)
-  print("Getting your cheques ready...")
+  print("Getting your cheques ready... 💸")
 
   options = webdriver.ChromeOptions()
   options.add_argument('headless')
@@ -48,7 +48,7 @@ def main():
 
   cheques = driver.find_element_by_xpath("/html/body/div/main/section/div/div/div[1]/div[1]/p/strong[1]").text
 
-  amount = "You have {} maaltijdcheques!".format(cheques)
+  amount = "You have {} maaltijdcheques left! 🤑".format(cheques)
 
   sys.stdout.write(CURSOR_UP_ONE)
   sys.stdout.write(ERASE_LINE)
